@@ -4,26 +4,27 @@ import React from "react";
 
 import TodosList from "./TodosList";
 import Header from "./Header";
+import InputTodo from "./InputTodo";
 
 class TodoContainer extends React.Component {
     state = {
-        todos: [
-          {
-            id: 1,
-            title: "Setup development environment",
-            completed: false
-          },
-          {
-            id: 2,
-            title: "Develop website and add content",
-            completed: true
-          },
-          {
-            id: 3,
-            title: "Deploy to live server",
-            completed: false
-          }
-        ]
+      todos: [
+        {
+          id: 1,
+          title: "Setup development environment",
+          completed: false
+        },
+        {
+          id: 2,
+          title: "Develop website and add content",
+          completed: true
+        },
+        {
+          id: 3,
+          title: "Deploy to live server",
+          completed: false
+        }
+      ]
     };
     handleChange = id => {
       this.setState({
@@ -48,6 +49,7 @@ class TodoContainer extends React.Component {
         return (
             <div>
                 <Header />
+                <InputTodo />
                 <TodosList 
                   todos={this.state.todos} 
                   handleChangeProps={this.handleChange}
