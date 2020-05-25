@@ -14,10 +14,19 @@ class InputTodo extends Component {
   render() {
     return (
       <form>
-        <input type="text" placeholder="Add Todo..." value={this.state.title} onChange={this.onChange}/>
-        <input type="submit" value="Submit" />
+        <input 
+          type="text" 
+          placeholder="Add Todo..." 
+          value={this.state.title} 
+          onChange={this.onChange}
+        />
+        <input 
+          type="submit" 
+          value="Submit" 
+        />
       </form>
     )
   }
 }
-export default InputTodo
+
+export default InputTodo;
