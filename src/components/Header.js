@@ -9,9 +9,10 @@ const Header = () => {
   };
   return (
     <header style={headerStyle}>
-      <h1 style={{ fontSize: "25px", marginBottom: "15px" }}>
+      <h1 style={{ fontSize: "25px", marginBottom: "" }}>
         Simple Todo App
       </h1>
+      <h3 style={{ fontSize: "12px", marginBottom: "15px", marginTop: "-10px" }}>by Adrian Grabkowski</h3>
       <p style={{ fontSize: "19px" }}>
         Please add to-dos item(s) through the input field
       </p>
