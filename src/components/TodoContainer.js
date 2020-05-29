@@ -2,6 +2,7 @@
 
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 import TodosList from "./TodosList";
 import Header from "./Header";
@@ -40,6 +41,15 @@ class TodoContainer extends React.Component {
         todos: [...this.state.todos, newTodo]
       });
     };
+    async componentDidMount() {
+      const data = await axios.get("https://jsonplaceholder.typicode.com/todos", {
+        params: {
+          _limit: 10
+        }
+      });
+      const functionAdd = (data) => this.setState({ todos: data.data });
+      functionAdd(data);
+    }
     render() {
         return (
             <div className="container">
