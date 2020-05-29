@@ -9,13 +9,7 @@ import InputTodo from "./InputTodo";
 
 class TodoContainer extends React.Component {
     state = {
-      todos: [
-        {
-          id: uuidv4(),
-          title: "Do some fun...",
-          completed: false
-        }
-      ]
+      todos: [],
     };
     handleChange = id => {
       this.setState({
