@@ -23,13 +23,17 @@ class TodoContainer extends React.Component {
       });
     };
     delTodo = id => {
-      this.setState({
-        todos: [
-          ...this.state.todos.filter(todo => {
-            return todo.id !== id;
-          })
-        ]
-      });
+      axios
+        .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+          .then(reponse =>
+            this.setState({
+              todos: [
+                ...this.state.todos.filter(todo => {
+                  return todo.id !== id
+                }),
+              ],
+            })
+          )
     };
     addTodoItem = title => {
       axios
